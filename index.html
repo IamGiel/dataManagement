@@ -37,50 +37,14 @@
 		      	<th></th>
 		      </tr>
 		      <tr>
-		        <th>Employee Name</th>
-		        <th>Role</th>
-		        <th>Start Date</th>
-		        <th>Monthly Rate ($)</th>
-		        <th>Total Billed ($)</th>
+		        <th id="employee"></th>
+		        <th id="role"></th>
+		        <th id="start"></th>
+		        <th id="monthly"></th>
+		        <th id="total"></th>
 		      </tr>
 		    </thead>
-		    <tbody>
-		      <tr>
-		        <td>name</td><!-- train name -->
-		        <td>Defaultson</td><!-- destination -->
-		        <td>12:00</td><!-- Frequency (min) -->
-		        <td>1:05</td><!-- next arrival -->
-		        <td>12:09</td><!-- minutes away -->
-		      </tr>
-		      <tr>
-		        <td>Default</td><!-- train name -->
-		        <td>Defaultson</td><!-- destination -->
-		        <td>12:00</td><!-- Frequency (min) -->
-		        <td>1:05</td><!-- next arrival -->
-		        <td>12:09</td><!-- minutes away -->
-		      </tr>   
-		      <tr>
-		        <td>Default</td><!-- train name -->
-		        <td>Defaultson</td><!-- destination -->
-		        <td>12:00</td><!-- Frequency (min) -->
-		        <td>1:05</td><!-- next arrival -->
-		        <td>12:09</td><!-- minutes away -->
-		      </tr>   
-		      <tr>
-		        <td>Default</td><!-- train name -->
-		        <td>Defaultson</td><!-- destination -->
-		        <td>12:00</td><!-- Frequency (min) -->
-		        <td>1:05</td><!-- next arrival -->
-		        <td>12:09</td><!-- minutes away -->
-		      </tr>   
-		      <tr>
-		        <td>Default</td><!-- train name -->
-		        <td>Defaultson</td><!-- destination -->
-		        <td>12:00</td><!-- Frequency (min) -->
-		        <td>1:05</td><!-- next arrival -->
-		        <td>12:09</td><!-- minutes away -->
-		      </tr>         
-		    </tbody>
+		    
 		  </table>
 	</div>
 	<!-- jumbotron bottom -->
@@ -99,46 +63,99 @@
 		<!-- input fields -->
 		<form>
 			<div class="form-group">
-			  <label for="user">Employee Name:</label>
-			  <input type="text" class="form-control" id="train-name">
+			  <label for="employee-name">Employee Name:</label>
+			  <input type="text" class="form-control" id="employee-name">
 			</div>
 			<div class="form-group">
-			  <label for="destination">Role:</label>
-			  <input type="text" class="form-control" id="destination">
+			  <label for="role">Role:</label>
+			  <input type="text" class="form-control" id="role">
 			</div>
 			<div class="form-group">
-			  <label for="first-train-time">Start Date: <span>(MM/DD/YY - ex: 01/01/89)</span></label>
-			  <input type="number" class="form-control" id="first-train-time">
+			  <label for="start-date">Start Date: <span>(MM/DD/YY - ex: 01/01/89)</span></label>
+			  <input type="number" class="form-control" id="start-date">
 			</div>
 			<div class="form-group">
-			  <label for="frequency">Monthly Rate:</label>
-			  <input type="number" class="form-control" id="frequency">
+			  <label for="monthly-rate">Monthly Rate:</label>
+			  <input type="number" class="form-control" id="monthly-rate">
 			</div>
 			<input class="btn btn-primary" id="submit" type="submit"></input>
 		</form>
 	</div>
 
-<!-- ====================================== -->
-<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
-<script>
-  // Initialize Firebase
-  var config = {
-    apiKey: "AIzaSyCtSgYbqsxDYOGtbyOdVnYyqdYmPLz_v_8",
-    authDomain: "friendly-chat-f3315.firebaseapp.com",
-    databaseURL: "https://friendly-chat-f3315.firebaseio.com",
-    projectId: "friendly-chat-f3315",
-    storageBucket: "",
-    messagingSenderId: "1076788307752"
-  };
-  firebase.initializeApp(config);
-</script>
+<!-- ====================================== <--></-->
+<script src="https://www.gstatic.com/firebasejs/4.6.1/firebase.js"></script>
 <script src="https://code.jquery.com/jquery.js"></script>
-<script src="javascript/app.js"></script>
+<script src="javascript/app.js" type="text/javascript"></script>
+
 
 </body>
 
 
 </html>
+
+<script>
+	// $(document).ready(function(){
+
+ console.log("working");
+ var config = {
+    apiKey: "AIzaSyCBzzyQfD76zgurrzAvqxxySwS6Rv6czjE",
+    authDomain: "employeem-23e7e.firebaseapp.com",
+    databaseURL: "https://employeem-23e7e.firebaseio.com",
+    projectId: "employeem-23e7e",
+    storageBucket: "employeem-23e7e.appspot.com",
+    messagingSenderId: "382300694090"
+  };
+  firebase.initializeApp(config);
+
+
+  // variables
+  var database = firebase.database();
+
+  var employeeName = "";
+  var role = "";
+  var startDate = "";
+  var monthlyRate = "";
+  
+
+  //onclick
+  $("#submit").on("click", function (event){
+      event.preventDefault();
+
+      employeeName = $("#employee-name").val().trim();
+      role = $("#role").val().trim();
+      startDate = $("#start-date").val().trim();
+      monthlyRate = $("#monthly-rate").val().trim();
+
+      console.log(employeeName);
+
+
+      database.ref().push({
+            employeeName:employeeName,
+            role:role,
+            startDate:startDate,
+            monthlyRate:monthlyRate
+      })
+  })
+
+  //pull
+  database.ref().on("child_added", function(childSnapshot) {
+      console.log(childSnapshot.val().employeeName);
+
+      
+  })
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
 
 
 
