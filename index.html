@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Data Management</title>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<!-- style css -->
+	<link rel="stylesheet" type="text/css" href="assets/style.css">
+
+
+</head>
+
+<!-- ======================================= -->
+<body>
+	<!-- jumbotron top -->
+	<div class="jumbotron jumbotron-fluid" id="jumbotron1">
+		<h1 class="display-3">Employee Data Management</h1>
+		<h4>A Comprehensive Directory of Employee Billable Hours</h4>			
+			<!-- <hr class="my-4">
+			<a class="btn btn-primary btn-lg" href="#" role="button">feeling lucky</a>
+			</p> -->
+	</div>
+	<!-- jumbotron middle -->
+	<div class="jumbotron jumbotron-fluid" id="jumbotron2">
+		<!-- table -->
+		<table class="table">
+		    <thead>
+		      <tr class="info">
+		      	<th>Current Employees</th>
+		      	<th></th>
+		      	<th></th>
+		      	<th></th>
+		      	<th></th>
+		      </tr>
+		      <tr>
+		        <th>Employee Name</th>
+		        <th>Role</th>
+		        <th>Start Date</th>
+		        <th>Monthly Rate ($)</th>
+		        <th>Total Billed ($)</th>
+		      </tr>
+		    </thead>
+		    <tbody>
+		      <tr>
+		        <td>name</td><!-- train name -->
+		        <td>Defaultson</td><!-- destination -->
+		        <td>12:00</td><!-- Frequency (min) -->
+		        <td>1:05</td><!-- next arrival -->
+		        <td>12:09</td><!-- minutes away -->
+		      </tr>
+		      <tr>
+		        <td>Default</td><!-- train name -->
+		        <td>Defaultson</td><!-- destination -->
+		        <td>12:00</td><!-- Frequency (min) -->
+		        <td>1:05</td><!-- next arrival -->
+		        <td>12:09</td><!-- minutes away -->
+		      </tr>   
+		      <tr>
+		        <td>Default</td><!-- train name -->
+		        <td>Defaultson</td><!-- destination -->
+		        <td>12:00</td><!-- Frequency (min) -->
+		        <td>1:05</td><!-- next arrival -->
+		        <td>12:09</td><!-- minutes away -->
+		      </tr>   
+		      <tr>
+		        <td>Default</td><!-- train name -->
+		        <td>Defaultson</td><!-- destination -->
+		        <td>12:00</td><!-- Frequency (min) -->
+		        <td>1:05</td><!-- next arrival -->
+		        <td>12:09</td><!-- minutes away -->
+		      </tr>   
+		      <tr>
+		        <td>Default</td><!-- train name -->
+		        <td>Defaultson</td><!-- destination -->
+		        <td>12:00</td><!-- Frequency (min) -->
+		        <td>1:05</td><!-- next arrival -->
+		        <td>12:09</td><!-- minutes away -->
+		      </tr>         
+		    </tbody>
+		  </table>
+	</div>
+	<!-- jumbotron bottom -->
+	<div class="jumbotron jumbotron-fluid" id="jumbotron3">
+		<table class="table">
+		    <thead>
+		      <tr class="info">
+		      	<th>Add Employee</th>
+		      	<th></th>
+		      	<th></th>
+		      	<th></th>
+		      	<th></th>
+		      </tr>
+		    </thead>
+		</table>
+		<!-- input fields -->
+		<form>
+			<div class="form-group">
+			  <label for="user">Employee Name:</label>
+			  <input type="text" class="form-control" id="train-name">
+			</div>
+			<div class="form-group">
+			  <label for="destination">Role:</label>
+			  <input type="text" class="form-control" id="destination">
+			</div>
+			<div class="form-group">
+			  <label for="first-train-time">Start Date: <span>(MM/DD/YY - ex: 01/01/89)</span></label>
+			  <input type="number" class="form-control" id="first-train-time">
+			</div>
+			<div class="form-group">
+			  <label for="frequency">Monthly Rate:</label>
+			  <input type="number" class="form-control" id="frequency">
+			</div>
+			<input class="btn btn-primary" id="submit" type="submit"></input>
+		</form>
+	</div>
+
+<!-- ====================================== -->
+<script src="https://www.gstatic.com/firebasejs/4.6.0/firebase.js"></script>
+<script>
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyCtSgYbqsxDYOGtbyOdVnYyqdYmPLz_v_8",
+    authDomain: "friendly-chat-f3315.firebaseapp.com",
+    databaseURL: "https://friendly-chat-f3315.firebaseio.com",
+    projectId: "friendly-chat-f3315",
+    storageBucket: "",
+    messagingSenderId: "1076788307752"
+  };
+  firebase.initializeApp(config);
+</script>
+<script src="https://code.jquery.com/jquery.js"></script>
+<script src="javascript/app.js"></script>
+
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
