@@ -9,7 +9,10 @@
 	<!-- Latest compiled JavaScript -->
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- style css -->
-	<link rel="stylesheet" type="text/css" href="assets/style.css">
+	<link rel="stylesheet" type="text/css" href="assets/style.css">	
+	<!-- momentjs -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+
 
 
 </head>
@@ -34,20 +37,25 @@
 		      	<th></th>
 		      	<th></th>
 		      	<th></th>
-		      	<th></th>
+		      	<th >Today :  <span id="dateToday"></span> </th>
 		      </tr>
 		      <tr>
-		        <th id="employee"></th>
-		        <th id="role"></th>
-		        <th id="start"></th>
-		        <th id="monthly"></th>
-		        <th id="total"></th>
+		        <th id="employee">Employee</th>
+		        <th id="role">Role</th>
+		        <th id="start">Start Date</th>
+		        <th id="monthly">Monthly Rate</th>
+		        <th id="bill">Paid</th>
 		      </tr>
 		    </thead>
+		    <tbody>
+		    	
+		    		<!-- append here -->
+		    	
+		    </tbody>
 		    
 		  </table>
 	</div>
-	<!-- jumbotron bottom -->
+	<!-- jumbotron bottom inputs --> 
 	<div class="jumbotron jumbotron-fluid" id="jumbotron3">
 		<table class="table">
 		    <thead>
@@ -67,8 +75,8 @@
 			  <input type="text" class="form-control" id="employee-name">
 			</div>
 			<div class="form-group">
-			  <label for="role">Role:</label>
-			  <input type="text" class="form-control" id="role">
+			  <label for="role-of">Role:</label>
+			  <input type="text" class="form-control" id="role-of">
 			</div>
 			<div class="form-group">
 			  <label for="start-date">Start Date: <span>(MM/DD/YY - ex: 01/01/89)</span></label>
@@ -93,7 +101,7 @@
 
 </html>
 
-<script>
+<!-- <script>
 	// $(document).ready(function(){
 
  console.log("working");
@@ -164,3 +172,4 @@
 
 
 
+ -->
